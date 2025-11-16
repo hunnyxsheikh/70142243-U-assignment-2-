@@ -4,57 +4,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>practice 1</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Assignment Solutions</title>
+
+    <style>
+        /* ------------------- YOUR CSS ADDED ------------------- */
+
+        body {
+            background-color: rgb(110, 129, 236) !important;
+            font-family: Arial;
+            margin: 20px;
+        }
+
+        #h1 {
+            text-align: center;
+            margin: 1em;
+        }
+
+        #btn1 {
+            padding: 10px 10px;
+            border-radius: 20px;
+            font-size: 20px;
+            cursor: pointer;
+            margin: auto;
+            background-color: royalblue;
+        }
+
+        #label {
+            font-size: 25px;
+            font-weight: bold;
+            margin-top: 4.5em;
+            display: block;
+        }
+
+        #btn1:hover {
+            background-color: blue;
+            color: white;
+        }
+
+        .calculator {
+            text-align: center;
+            border: 2px solid black;
+            width: 300px;
+            height: 500px;
+            margin: auto;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: lightgray;
+        }
+
+        input {
+            width: 280px;
+            height: 40px;
+            font-size: 20px;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 60px;
+            height: 60px;
+            font-size: 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: gray;
+            color: white;
+        }
+
+        .equal {
+            background-color: green;
+            color: white;
+        }
+
+        .equal:hover {
+            background-color: darkgreen;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        #footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: gray;
+        }
+
+        #footer a {
+            color: gray;
+            text-decoration: none;
+        }
+
+        /* --------------- EXTRA STYLING FOR OTHER QUESTIONS --------------- */
+        .box {
+            border: 2px solid black;
+            padding: 20px;
+            margin: 30px auto;
+            width: 350px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        #timerDisplay {
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
 
-    <div id="container">
-        <h1 id="h1"> </h1>
-        <label id="label"></label><br><br>
-        <button id="btn1">click me </button>
+    <!-- -------------------- QUESTION 1 -------------------- -->
+    <div class="box">
+        <h2>Q1: Hello World</h2>
+        <button id="btn1" onclick="alert('Hello, World!')">Click Me</button>
     </div>
 
-   <div class="calculator">
 
-    <div class="result">
-        <input type="text" id="result">
+    <!-- -------------------- QUESTION 2 -------------------- -->
+    <div class="calculator">
+        <h2>Q2: Calculator</h2>
+
+        <input type="text" id="result" readonly><br>
+
+        <button onclick="clearResult()">AC</button>
+        <button onclick="deleteLast()">DEL</button>
+        <button onclick="appendValue('%')">%</button>
+        <button onclick="appendValue('/')">/</button><br>
+
+        <button onclick="appendValue('7')">7</button>
+        <button onclick="appendValue('8')">8</button>
+        <button onclick="appendValue('9')">9</button>
+        <button onclick="appendValue('*')">*</button><br>
+
+        <button onclick="appendValue('4')">4</button>
+        <button onclick="appendValue('5')">5</button>
+        <button onclick="appendValue('6')">6</button>
+        <button onclick="appendValue('-')">-</button><br>
+
+        <button onclick="appendValue('1')">1</button>
+        <button onclick="appendValue('2')">2</button>
+        <button onclick="appendValue('3')">3</button>
+        <button onclick="appendValue('+')">+</button><br>
+
+        <button onclick="appendValue('0')">0</button>
+        <button class="equal" onclick="calculate()">=</button>
     </div>
 
-    <div class="clear">
-        <button id="clear">AC</button>
-        <button id="back">DEL</button>
 
-        <button class="op" data-value="%">%</button>
-        <button class="op" data-value="/">/</button>
+    <!-- -------------------- QUESTION 3 -------------------- -->
+    <div class="box">
+        <h2>Q3: To-Do List</h2>
+
+        <input type="text" id="todoInput" placeholder="Enter task">
+        <button onclick="addTodo()">Add</button>
+
+        <ul id="todoList"></ul>
     </div>
 
-    <div class="numbers">
-        <button class="num" data-value="0">0</button>
-        <button class="num" data-value="1">1</button>
-        <button class="num" data-value="2">2</button>
-        <button class="num" data-value="3">3</button>
-        <button class="num" data-value="4">4</button>
-        <button class="num" data-value="5">5</button>
-        <button class="num" data-value="6">6</button>
-        <button class="num" data-value="7">7</button>
-        <button class="num" data-value="8">8</button>
-        <button class="num" data-value="9">9</button>
+
+    <!-- -------------------- QUESTION 4 -------------------- -->
+    <div class="box">
+        <h2>Q4: Random Number Generator</h2>
+        <button onclick="generateRandom()">Generate</button>
+        <p id="randomOutput"></p>
     </div>
 
-    <div class="operands">
-        <button class="op" data-value="+">+</button>
-        <button class="op" data-value="-">-</button>
-        <button class="op" data-value="*">*</button>
 
-        <button id="equal">=</button>
+    <!-- -------------------- QUESTION 5 -------------------- -->
+    <div class="box">
+        <h2>Q5: Temperature Converter</h2>
+
+        Celsius: <input type="number" id="celsius"><br><br>
+        Fahrenheit: <input type="number" id="fahrenheit"><br><br>
+
+        <button onclick="convertTemp()">Convert</button>
     </div>
 
-</div>
-<script src="practice.js"></script>
+
+    <!-- -------------------- QUESTION 6 -------------------- -->
+    <div class="box">
+        <h2>Q6: Palindrome Checker</h2>
+
+        <input type="text" id="palInput" placeholder="Enter word">
+        <button onclick="checkPalindrome()">Check</button>
+
+        <p id="palResult"></p>
+    </div>
 
 
+    <!-- -------------------- QUESTION 7 -------------------- -->
+    <div class="box">
+        <h2>Q7: Timer</h2>
+
+        <div id="timerDisplay">0</div><br>
+
+        <button onclick="startTimer()">Start</button>
+        <button onclick="stopTimer()">Stop</button>
+    </div>
+
+
+    <!-- -------------------- QUESTION 8 -------------------- -->
+    <div class="box">
+        <h2>Q8: Dropdown Menu</h2>
+
+        <select id="dropdown">
+            <option value="Apple">Apple</option>
+            <option value="Orange">Orange</option>
+            <option value="Mango">Mango</option>
+        </select>
+
+        <button onclick="showSelected()">Show Selected</button>
+
+        <p id="dropdownResult"></p>
+    </div>
+
+
+    <!-- -------------------- JAVASCRIPT -------------------- -->
+    <script>
+        /* ---------- Calculator (Q2) ---------- */
+        function appendValue(val) {
+            document.getElementById("result").value += val;
+        }
+
+        function clearResult() {
+            document.getElementById("result").value = "";
+        }
+
+        function deleteLast() {
+            let x = document.getElementById("result").value;
+            document.getElementById("result").value = x.slice(0, -1);
+        }
+
+        function calculate() {
+            try {
+                document.getElementById("result").value =
+                    eval(document.getElementById("result").value);
+            } catch {
+                alert("Invalid Expression");
+            }
+        }
+
+        /* ---------- To-Do List (Q3) ---------- */
+        function addTodo() {
+            let item = document.getElementById("todoInput").value;
+
+            if (item === "") return;
+
+            let li = document.createElement("li");
+            li.textContent = item;
+
+            document.getElementById("todoList").appendChild(li);
+            document.getElementById("todoInput").value = "";
+        }
+
+        /* ---------- Random Number (Q4) ---------- */
+        function generateRandom() {
+            let num = Math.floor(Math.random() * 100) + 1;
+            document.getElementById("randomOutput").textContent = "Random Number: " + num;
+        }
+
+        /* ---------- Temperature Converter (Q5) ---------- */
+        function convertTemp() {
+            let c = document.getElementById("celsius").value;
+            let f = document.getElementById("fahrenheit").value;
+
+            if (c !== "") {
+                document.getElementById("fahrenheit").value = (c * 9 / 5) + 32;
+            } else if (f !== "") {
+                document.getElementById("celsius").value = (f - 32) * 5 / 9;
+            }
+        }
+
+        /* ---------- Palindrome Checker (Q6) ---------- */
+        function checkPalindrome() {
+            let text = document.getElementById("palInput").value.toLowerCase();
+            let reversed = text.split("").reverse().join("");
+
+            document.getElementById("palResult").textContent =
+                text === reversed ? "It is a Palindrome ✔" : "Not a Palindrome ✘";
+        }
+
+        /* ---------- Timer (Q7) ---------- */
+        let timer = null;
+        let count = 0;
+
+        function startTimer() {
+            if (timer) return;
+            timer = setInterval(() => {
+                count++;
+                document.getElementById("timerDisplay").textContent = count;
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timer);
+            timer = null;
+        }
+
+        /* ---------- Dropdown (Q8) ---------- */
+        function showSelected() {
+            let value = document.getElementById("dropdown").value;
+            document.getElementById("dropdownResult").textContent = "Selected: " + value;
+        }
+    </script>
 </body>
 
 </html>
+
