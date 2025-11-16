@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="container">
+        <h1 id="h1"> </h1>
+        <label id="label"></label><br><br>
+        <button id="btn1">click me </button>
+    </div>
+
+   <div class="calculator">
+
+    <div class="result">
+        <input type="text" id="result">
+    </div>
+
+    <div class="clear">
+        <button id="clear">AC</button>
+        <button id="back">DEL</button>
+
+        <button class="op" data-value="%">%</button>
+        <button class="op" data-value="/">/</button>
+    </div>
+
+    <div class="numbers">
+        <button class="num" data-value="0">0</button>
+        <button class="num" data-value="1">1</button>
+        <button class="num" data-value="2">2</button>
+        <button class="num" data-value="3">3</button>
+        <button class="num" data-value="4">4</button>
+        <button class="num" data-value="5">5</button>
+        <button class="num" data-value="6">6</button>
+        <button class="num" data-value="7">7</button>
+        <button class="num" data-value="8">8</button>
+        <button class="num" data-value="9">9</button>
+    </div>
+
+    <div class="operands">
+        <button class="op" data-value="+">+</button>
+        <button class="op" data-value="-">-</button>
+        <button class="op" data-value="*">*</button>
+
+        <button id="equal">=</button>
+    </div>
+
+</div>
+<script src="practice.js"></script>
+
+
+</body>
+
+</html>
