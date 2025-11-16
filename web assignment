@@ -7,7 +7,7 @@
     <title>Assignment Solutions</title>
 
     <style>
-        /* ------------------- YOUR CSS ADDED ------------------- */
+        
 
         body {
             background-color: rgb(110, 129, 236) !important;
@@ -100,7 +100,7 @@
             text-decoration: none;
         }
 
-        /* --------------- EXTRA STYLING FOR OTHER QUESTIONS --------------- */
+       
         .box {
             border: 2px solid black;
             padding: 20px;
@@ -316,4 +316,3 @@
 </body>
 
 </html>
-
